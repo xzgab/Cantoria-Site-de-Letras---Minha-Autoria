@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playlists — Cantoria</title>
+  <meta name="description" content="Crie playlists com suas letras favoritas e ouça na ordem que quiser." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+</head>
+
+<body data-page="playlists">
+  <header id="site-header"></header>
+
+  <main class="container">
+    <section class="page-head page-head-row">
+      <div>
+        <h1>Playlists</h1>
+        <p>Monte coleções com as letras que você mais gosta e ouça tudo em sequência.</p>
+      </div>
+      <button class="btn btn-primary" id="new-playlist-btn" hidden>+ Nova playlist</button>
+    </section>
+
+    <div id="playlists-login" class="empty-state" hidden>
+      <div class="empty-icon">🎧</div>
+      <h3>Entre para criar suas playlists</h3>
+      <p>Playlists ficam salvas na sua conta e podem ser criadas a partir de qualquer música.</p>
+      <div class="empty-actions">
+        <a class="btn btn-primary" href="login.html?redirect=playlists.html">Entrar</a>
+        <a class="btn btn-ghost" href="login.html?tab=register&redirect=playlists.html">Criar conta</a>
+      </div>
+    </div>
+
+    <div id="playlists-content" hidden>
+      <section class="section" id="my-playlists-section">
+        <div class="section-head">
+          <h2>Minhas playlists</h2>
+          <span class="hint" id="my-playlists-count"></span>
+        </div>
+        <div id="my-playlists" class="playlist-grid"></div>
+        <div id="my-playlists-empty" class="empty-state" hidden>
+          <div class="empty-icon">✨</div>
+          <h3>Você ainda não tem playlists</h3>
+          <p>Clique em "+ Nova playlist" ou use o botão <strong>+</strong> em qualquer música.</p>
+          <div class="empty-actions">
+            <button class="btn btn-primary" data-create-playlist>Criar primeira playlist</button>
+            <a class="btn btn-ghost" href="letras.html">Explorar catálogo</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="public-playlists-section" hidden>
+        <div class="section-head">
+          <h2>Populares na comunidade</h2>
+        </div>
+        <div id="public-playlists" class="playlist-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="modal-root"></div>
+  <div id="player-bar" class="player-bar" aria-hidden="true"></div>
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/playlists.js"></script>
+</body>
+
+</html>

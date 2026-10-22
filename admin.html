@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel de Administrador — Cantoria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+</head>
+
+<body data-page="admin">
+  <header id="site-header"></header>
+
+  <main class="container">
+    <div id="admin-denied" class="empty-state" hidden>
+      <div class="empty-icon">⛔</div>
+      <h3>Acesso restrito</h3>
+      <p>Esta área é exclusiva para administradores do portal.</p>
+      <a class="btn btn-primary" href="login.html?redirect=admin.html">Entrar como administrador</a>
+    </div>
+
+    <div id="admin-panel" hidden>
+      <section class="page-head">
+        <h1>Painel de Administrador</h1>
+        <p>Revise contribuições, gerencie o catálogo e os usuários do portal.</p>
+      </section>
+
+      <div class="stats-grid" id="admin-stats"></div>
+
+      <div class="tabs admin-tabs" role="tablist">
+        <button class="tab active" data-panel="pending" role="tab">Pendentes <span class="badge"
+            id="badge-pending">0</span></button>
+        <button class="tab" data-panel="published" role="tab">Publicadas</button>
+        <button class="tab" data-panel="catalog" role="tab">Músicas publicadas</button>
+        <button class="tab" data-panel="rejected" role="tab">Rejeitadas</button>
+        <button class="tab" data-panel="users" role="tab">Usuários</button>
+      </div>
+
+      <div id="panel-pending" class="admin-panel-section"></div>
+      <div id="panel-published" class="admin-panel-section" hidden></div>
+      <div id="panel-catalog" class="admin-panel-section" hidden></div>
+      <div id="panel-rejected" class="admin-panel-section" hidden></div>
+      <div id="panel-users" class="admin-panel-section" hidden></div>
+    </div>
+  </main>
+
+  <div id="modal-root"></div>
+  <div id="player-bar" class="player-bar" aria-hidden="true"></div>
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+
+</html>

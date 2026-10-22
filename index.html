@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cantoria — Letras de Música</title>
+  <meta name="description" content="Portal de letras de música com player integrado. Ouça e leia as letras, envie suas letras favoritas." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+</head>
+<body data-page="home">
+  <header id="site-header"></header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Letras que você <span class="accent">canta</span> junto</h1>
+      <p>Leia, ouça e compartilhe as letras das suas músicas favoritas. Tudo em um só lugar.</p>
+      <form id="hero-search" class="search-box" autocomplete="off">
+        <input type="search" id="hero-search-input" placeholder="Buscar por música, artista ou trecho da letra..." aria-label="Buscar músicas" />
+        <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
+      <div class="hero-stats" id="hero-stats"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Gêneros</h2>
+      </div>
+      <div id="genre-chips" class="chips"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Suas playlists</h2>
+        <a class="link-more" href="playlists.html">Gerenciar →</a>
+      </div>
+      <div id="home-playlists" class="playlist-grid"></div>
+      <div id="home-playlists-cta" class="playlist-cta" hidden>
+        <div>
+          <h3>Monte sua primeira playlist</h3>
+          <p>Agrupe as letras que você ama e ouça tudo em sequência.</p>
+        </div>
+        <a class="btn btn-primary" href="playlists.html">Criar playlist</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Músicas em destaque</h2>
+        <a class="link-more" href="letras.html">Ver todas →</a>
+      </div>
+      <div id="featured-grid" class="card-grid"></div>
+    </section>
+  </main>
+
+  <div id="player-bar" class="player-bar" aria-hidden="true"></div>
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

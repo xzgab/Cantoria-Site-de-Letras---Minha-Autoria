@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Letras — Cantoria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+</head>
+
+<body data-page="letras">
+  <header id="site-header"></header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1>Catálogo de Letras</h1>
+      <p>Explore nossa coleção completa. Use os filtros para encontrar sua música.</p>
+    </section>
+
+    <div class="filters">
+      <div class="filter-row">
+        <input type="search" id="catalog-search" placeholder="Buscar por título, artista ou trecho..."
+          aria-label="Buscar no catálogo" />
+      </div>
+      <div class="filter-row">
+        <select id="filter-genre" aria-label="Filtrar por gênero">
+          <option value="">Todos os gêneros</option>
+        </select>
+        <select id="filter-decade" aria-label="Filtrar por década">
+          <option value="">Qualquer época</option>
+          <option value="2020">Anos 2020</option>
+          <option value="2010">Anos 2010</option>
+          <option value="2000">Anos 2000</option>
+          <option value="1990">Anos 1990</option>
+          <option value="1980">Anos 1980</option>
+        </select>
+        <select id="sort-by" aria-label="Ordenar por">
+          <option value="recent">Mais recentes</option>
+          <option value="title">Título (A-Z)</option>
+          <option value="artist">Artista (A-Z)</option>
+          <option value="views">Mais ouvidas</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="catalog-meta" class="catalog-meta"></div>
+    <div id="catalog-grid" class="card-grid"></div>
+    <div id="catalog-empty" class="empty-state" hidden>
+      <div class="empty-icon">🔍</div>
+      <h3>Nenhuma música encontrada</h3>
+      <p>Tente ajustar a busca ou os filtros.</p>
+    </div>
+  </main>
+
+  <div id="player-bar" class="player-bar" aria-hidden="true"></div>
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/letras.js"></script>
+</body>
+
+</html>

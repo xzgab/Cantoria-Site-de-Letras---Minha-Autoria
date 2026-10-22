@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar — Cantoria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+</head>
+
+<body data-page="login">
+  <header id="site-header"></header>
+
+  <main class="container auth-wrap">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <span class="logo-mark">♪</span>
+        <h1 id="auth-title">Bem-vindo de volta</h1>
+        <p id="auth-subtitle">Entre para enviar letras e acompanhar suas contribuições.</p>
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab active" id="tab-login" data-tab="login" role="tab">Entrar</button>
+        <button class="tab" id="tab-register" data-tab="register" role="tab">Criar conta</button>
+      </div>
+
+      <form id="login-form" class="auth-form" novalidate>
+        <div class="field">
+          <label for="l-email">E-mail</label>
+          <input type="email" id="l-email" autocomplete="email" required placeholder="voce@exemplo.com" />
+        </div>
+        <div class="field">
+          <label for="l-password">Senha</label>
+          <input type="password" id="l-password" autocomplete="current-password" required placeholder="••••••••" />
+        </div>
+        <p class="form-error" id="login-error" hidden></p>
+        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      </form>
+
+      <form id="register-form" class="auth-form" hidden novalidate>
+        <div class="field">
+          <label for="r-name">Nome</label>
+          <input type="text" id="r-name" autocomplete="name" required maxlength="60" placeholder="Seu nome" />
+        </div>
+        <div class="field">
+          <label for="r-email">E-mail</label>
+          <input type="email" id="r-email" autocomplete="email" required placeholder="voce@exemplo.com" />
+        </div>
+        <div class="field">
+          <label for="r-password">Senha</label>
+          <input type="password" id="r-password" autocomplete="new-password" required minlength="6"
+            placeholder="Mínimo de 6 caracteres" />
+        </div>
+        <div class="field">
+          <label for="r-password2">Confirmar senha</label>
+          <input type="password" id="r-password2" autocomplete="new-password" required placeholder="Repita a senha" />
+        </div>
+        <p class="form-error" id="register-error" hidden></p>
+        <button type="submit" class="btn btn-primary btn-block">Criar minha conta</button>
+      </form>
+
+      <div class="auth-hint">
+        <strong>Conta de demonstração do administrador</strong>
+        <span>E-mail: <code>admin@cantoria.com</code> · Senha: <code>admin123</code></span>
+      </div>
+
+      <p class="auth-back"><a href="index.html">← Voltar para a página inicial</a></p>
+    </div>
+  </main>
+
+  <div id="player-bar" class="player-bar" aria-hidden="true"></div>
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

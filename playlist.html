@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playlist — Cantoria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+</head>
+
+<body data-page="playlist">
+  <header id="site-header"></header>
+
+  <main class="container">
+    <nav class="breadcrumb" aria-label="Navegação">
+      <a href="playlists.html">← Minhas playlists</a>
+    </nav>
+
+    <div id="playlist-loading" class="loading-state">
+      <div class="spinner"></div>
+      <p>Carregando playlist...</p>
+    </div>
+
+    <div id="playlist-notfound" class="empty-state" hidden>
+      <div class="empty-icon">🎧</div>
+      <h3>Playlist não encontrada</h3>
+      <p>Esta playlist pode ter sido excluída ou o link está incorreto.</p>
+      <a class="btn btn-primary" href="playlists.html">Ver minhas playlists</a>
+    </div>
+
+    <div id="playlist-content" hidden></div>
+  </main>
+
+  <div id="modal-root"></div>
+  <div id="player-bar" class="player-bar" aria-hidden="true"></div>
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/playlist.js"></script>
+</body>
+
+</html>

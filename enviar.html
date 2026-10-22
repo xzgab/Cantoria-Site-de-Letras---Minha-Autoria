@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enviar Letra — Cantoria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+</head>
+
+<body data-page="enviar">
+  <header id="site-header"></header>
+
+  <main class="container narrow">
+    <section class="page-head">
+      <h1>Enviar uma letra</h1>
+      <p>Preencha os dados abaixo. Nossa equipe vai revisar e publicar. Você pode acompanhar o status no seu perfil.</p>
+    </section>
+
+    <section class="section section-tight" id="my-submissions-section" hidden>
+      <div class="section-head">
+        <h2>Minhas contribuições</h2>
+        <span class="hint" id="my-submissions-count"></span>
+      </div>
+      <div id="my-submissions" class="submission-list"></div>
+    </section>
+
+    <div id="login-required" class="empty-state" hidden>
+      <div class="empty-icon">🔒</div>
+      <h3>Você precisa entrar para enviar letras</h3>
+      <p>Crie uma conta gratuita ou faça login para continuar.</p>
+      <div class="empty-actions">
+        <a class="btn btn-primary" href="login.html?redirect=enviar.html">Entrar</a>
+        <a class="btn btn-ghost" href="login.html?tab=register&redirect=enviar.html">Criar conta</a>
+      </div>
+    </div>
+
+    <section class="section" id="submit-section">
+      <div class="section-head">
+        <h2>Nova contribuição</h2>
+      </div>
+
+      <form id="submit-form" class="form-card" hidden novalidate>
+      <div class="form-grid">
+        <div class="field">
+          <label for="f-title">Título da música *</label>
+          <input type="text" id="f-title" name="title" maxlength="120" required placeholder="Ex.: Aquarela" />
+        </div>
+        <div class="field">
+          <label for="f-artist">Artista / Banda *</label>
+          <input type="text" id="f-artist" name="artist" maxlength="120" required placeholder="Ex.: Toquinho" />
+        </div>
+        <div class="field">
+          <label for="f-genre">Gênero</label>
+          <select id="f-genre" name="genre"></select>
+        </div>
+        <div class="field">
+          <label for="f-year">Ano de lançamento</label>
+          <input type="number" id="f-year" name="year" min="1900" max="2100" placeholder="Ex.: 1983" />
+        </div>
+        <div class="field full">
+          <label for="f-cover">Capa da música (URL de imagem)</label>
+          <input type="url" id="f-cover" name="cover" placeholder="https://..." />
+        </div>
+        <div class="field full">
+          <label for="f-audio">Link do áudio (MP3/OGG/WAV ou URL)</label>
+          <input type="url" id="f-audio" name="audio" placeholder="https://exemplo.com/musica.mp3" />
+          <small class="hint">Cole um link direto para o arquivo de áudio. Sem link, a letra ainda será publicada (modo
+            somente leitura).</small>
+        </div>
+        <div class="field full">
+          <label for="f-lyrics">Letra *</label>
+          <textarea id="f-lyrics" name="lyrics" rows="14" required
+            placeholder="Cole aqui a letra completa..."></textarea>
+          <small class="hint" id="lyrics-counter">0 caracteres</small>
+        </div>
+        <div class="field full">
+          <label for="f-notes">Observações para o revisor (opcional)</label>
+          <textarea id="f-notes" name="notes" rows="3" maxlength="500"
+            placeholder="Ex.: fonte oficial, correções de versão..."></textarea>
+        </div>
+        <div class="field full checkbox-field">
+          <label>
+            <input type="checkbox" id="f-rights" name="rights" required />
+            Confirmo que esta letra pode ser compartilhada e que não viola direitos autorais de terceiros. *
+          </label>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" id="submit-btn">Enviar para revisão</button>
+        <button type="reset" class="btn btn-ghost">Limpar</button>
+      </div>
+      <p class="form-error" id="form-error" hidden></p>
+    </form>
+    </section>
+  </main>
+
+  <div id="player-bar" class="player-bar" aria-hidden="true"></div>
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/enviar.js"></script>
+</body>
+
+</html>
